@@ -8,7 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: de3927dd665b10543906a7a8ec9aa4bd
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Main.unity
     guid: ccbb6495dc9a2a0428347223fbe52c32
+  - enabled: 0
+    path: Assets/Scenes/CamScene.unity
+    guid: f85181af141a20043814395e0e35c7e9
+  - enabled: 1
+    path: Assets/Scenes/Gabe.unity
+    guid: a05bb8121f9a7f54b921e53fb60d55c0
   m_configObjects: {}

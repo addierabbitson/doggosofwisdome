@@ -4,15 +4,8 @@ using UnityEngine;
 
 public class MainMenu : BaseState
 {
-    // Start is called before the first frame update
-    void Start()
+    public void StartButton()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        gameManager.currentState = States.GAME;
     }
 }
