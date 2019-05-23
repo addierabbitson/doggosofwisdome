@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7843795892180886678}
+  - component: {fileID: 7789292072535100464}
   m_Layer: 0
   m_Name: Chunk_010_Small_003
   m_TagString: Untagged
@@ -32,6 +33,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7789292072535100464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 237807356274078095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14b90de2a7b25084dac08819e8801e48, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounds: {x: 0, y: 0, z: 2}
 --- !u!1001 &1168492939813523952
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -57,7 +71,7 @@ PrefabInstance:
     - target: {fileID: 5605265628927519628, guid: 9ef53b1ffb6c4864c934d53c4d02c482,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5605265628927519628, guid: 9ef53b1ffb6c4864c934d53c4d02c482,
         type: 3}
@@ -132,7 +146,7 @@ PrefabInstance:
     - target: {fileID: 5605265628927519628, guid: 9ef53b1ffb6c4864c934d53c4d02c482,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5605265628927519628, guid: 9ef53b1ffb6c4864c934d53c4d02c482,
         type: 3}
