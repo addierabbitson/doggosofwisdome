@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
         direction.Add(PlayerDirection.BACKWARD, new Vector3(0, 0, -1));
         direction.Add(PlayerDirection.LEFT, new Vector3(-1, 0, 0));
         direction.Add(PlayerDirection.RIGHT, new Vector3(1, 0, 0));
+        directionNotToMove = PlayerDirection.COUNT;
     }
 
     private void Update()
@@ -70,7 +71,7 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.W) && !isMoving && directionNotToMove != PlayerDirection.FORWARD)
         {
             UpdateDirection(PlayerDirection.FORWARD);
-            currentPos = transform.position;
+            currentPos = transform.localPosition;
             targetPos = currentPos + direction[PlayerDirection.FORWARD];
 
             StartCoroutine("Hop");
@@ -78,7 +79,7 @@ public class PlayerController : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.S) && !isMoving && directionNotToMove != PlayerDirection.BACKWARD)
         {
             UpdateDirection(PlayerDirection.BACKWARD);
-            currentPos = transform.position;
+            currentPos = transform.localPosition;
             targetPos = currentPos + direction[PlayerDirection.BACKWARD];
 
             StartCoroutine("Hop");
@@ -86,7 +87,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A) && !isMoving && directionNotToMove != PlayerDirection.LEFT)
         {
             UpdateDirection(PlayerDirection.LEFT);
-            currentPos = transform.position;
+            currentPos = transform.localPosition;
             targetPos = currentPos + direction[PlayerDirection.LEFT];
 
             StartCoroutine("Hop");
@@ -94,7 +95,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D) && !isMoving && directionNotToMove != PlayerDirection.RIGHT)
         {
             UpdateDirection(PlayerDirection.RIGHT);
-            currentPos = transform.position;
+            currentPos = transform.localPosition;
             targetPos = currentPos + direction[PlayerDirection.RIGHT];
             
             StartCoroutine("Hop");
@@ -113,8 +114,8 @@ public class PlayerController : MonoBehaviour
     {
         isMoving = true;
         float timer = 0.0f;
-        Vector3 temp = transform.position;
-        float y = transform.position.y;
+        Vector3 temp = transform.localPosition;
+        float y = temp.y;
         Vector3 newPos = Vector3.zero;
         while (transform.position != targetPos)
         {
@@ -122,12 +123,12 @@ public class PlayerController : MonoBehaviour
             if (newPos == targetPos)
                 break;
             newPos.y = y + hopHeight;
-            transform.position = newPos;
+            transform.localPosition = newPos;
             timer += Time.fixedDeltaTime;
             yield return new WaitForFixedUpdate();
         }
         newPos.y = y;
-        transform.position = newPos;
+        transform.localPosition = newPos;
         isMoving = false;
     }
     
