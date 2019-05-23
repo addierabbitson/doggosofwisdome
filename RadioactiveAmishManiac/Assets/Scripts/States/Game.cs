@@ -33,7 +33,8 @@ public class Game : BaseState
     public void BackToPause()
     {
         gameManager.settingMenu.SetActive(false);
-        gameManager.pauseMenu.SetActive(true);
+        if(SceneManager.GetActiveScene().name == "Main")
+            gameManager.pauseMenu.SetActive(true);
     }
 
     public void Replay()

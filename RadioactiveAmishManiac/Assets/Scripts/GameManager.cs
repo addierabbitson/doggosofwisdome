@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
 
         DontDestroyOnLoad(this.gameObject);
 
-        if (menu == null)
+        if (menu != null)
         {
             //menu = GameObject.Find("Canvas").transform;
             //pauseMenu = GameObject.Find("PauseMenu").gameObject;
