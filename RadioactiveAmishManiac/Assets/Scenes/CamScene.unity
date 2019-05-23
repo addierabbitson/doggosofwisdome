@@ -376,6 +376,7 @@ MonoBehaviour:
   - {fileID: 1794680113661921291, guid: f0582199576fdea42b6cb695f4ae1689, type: 3}
   - {fileID: 4274765082925403520, guid: 32f6ce765937bd04fb132f661c4f9cb2, type: 3}
   - {fileID: 4940169644025572811, guid: 82774f56d427571498adc87bb8cb338d, type: 3}
+  - {fileID: 6406393164986333974, guid: d8f9639b7969aa141a1243b43dd3f905, type: 3}
   placeDirection: {x: 0, y: 0, z: 1}
 --- !u!4 &1314060223
 Transform:
