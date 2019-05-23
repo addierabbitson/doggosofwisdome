@@ -369,6 +369,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 201ed650894a19b4cb1f3e44d6802928, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startChunks:
+  - {fileID: 684258654622092881, guid: 3a2cd11ae66c2744f9759f59b3d15eb7, type: 3}
+  - {fileID: 7297754759184056771, guid: cb9fa7909670e9e49a794a51a8d38e8a, type: 3}
   levelChunks:
   - {fileID: 1794680113661921291, guid: f0582199576fdea42b6cb695f4ae1689, type: 3}
   - {fileID: 4274765082925403520, guid: 32f6ce765937bd04fb132f661c4f9cb2, type: 3}
