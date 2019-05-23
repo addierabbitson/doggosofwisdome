@@ -337,7 +337,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlaying: 1
-  cameraDirection: {x: 0, y: 0, z: 1}
+  cameraDirection: {x: 0, y: 0, z: 0}
   farBoundary: {fileID: 2115010212}
   deleteBoundary: {fileID: 928192688}
 --- !u!1 &1314060221
