@@ -2760,7 +2760,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5525,7 +5525,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6419,7 +6419,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -7102,11 +7102,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
-    - target: {fileID: 8875578320057720445, guid: ca017feb98c15574eb997296ff42a981,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8875578320057720443, guid: ca017feb98c15574eb997296ff42a981,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7192,5 +7187,20 @@ PrefabInstance:
       propertyPath: gameEnd
       value: 
       objectReference: {fileID: 1609458299}
+    - target: {fileID: 8875578320057720440, guid: ca017feb98c15574eb997296ff42a981,
+        type: 3}
+      propertyPath: masterSound
+      value: 
+      objectReference: {fileID: 1755137555}
+    - target: {fileID: 8875578320057720440, guid: ca017feb98c15574eb997296ff42a981,
+        type: 3}
+      propertyPath: bgmsound
+      value: 
+      objectReference: {fileID: 1998685111}
+    - target: {fileID: 8875578320057720440, guid: ca017feb98c15574eb997296ff42a981,
+        type: 3}
+      propertyPath: sfxsound
+      value: 
+      objectReference: {fileID: 789519652}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca017feb98c15574eb997296ff42a981, type: 3}

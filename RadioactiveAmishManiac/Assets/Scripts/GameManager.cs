@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public enum States
 {
@@ -24,6 +25,9 @@ public class GameManager : MonoBehaviour
     public GameObject gameUI;
     public GameObject mainMenu;
     public GameObject gameEnd;
+    public Slider masterSound;
+    public Slider bgmsound;
+    public Slider sfxsound;
 
     private void Awake()
     {
@@ -58,6 +62,10 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        AudioListener.volume = masterSound.value;
+        // Add in volume for background audio clips
+        // Add in volume for regular sound clips
+
         if (Input.GetKeyDown(KeyCode.Alpha0))
             currentState = States.MAINMENU;
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -74,22 +82,22 @@ public class GameManager : MonoBehaviour
             case States.MAINMENU:
                 SceneManager.LoadScene("MainMenu");
 
-                BaseState[] b = GetComponents<BaseState>();
-                foreach (var s in b)
-                    s.enabled = false;
+                //BaseState[] b = GetComponents<BaseState>();
+                //foreach (var s in b)
+                //    s.enabled = false;
 
-                MainMenu scene = GetComponent<MainMenu>();
-                scene.enabled = true;
+                //MainMenu scene = GetComponent<MainMenu>();
+                //scene.enabled = true;
                 break;
             case States.GAME:
                 SceneManager.LoadScene("Gabe");
 
-                BaseState[] b1 = GetComponents<BaseState>();
-                foreach (var s in b1)
-                    s.enabled = false;
+                //BaseState[] b1 = GetComponents<BaseState>();
+                //foreach (var s in b1)
+                //    s.enabled = false;
 
-                Game scene1 = GetComponent<Game>();
-                scene1.enabled = true;
+                //Game scene1 = GetComponent<Game>();
+                //scene1.enabled = true;
                 break;
         }
     }
