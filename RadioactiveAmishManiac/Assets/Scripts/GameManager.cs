@@ -74,22 +74,10 @@ public class GameManager : MonoBehaviour
             case States.MAINMENU:
                 SceneManager.LoadScene("MainMenu");
 
-                BaseState[] b = GetComponents<BaseState>();
-                foreach (var s in b)
-                    s.enabled = false;
-
-                MainMenu scene = GetComponent<MainMenu>();
-                scene.enabled = true;
                 break;
             case States.GAME:
-                SceneManager.LoadScene("Gabe");
+                SceneManager.LoadScene("CamScene");
 
-                BaseState[] b1 = GetComponents<BaseState>();
-                foreach (var s in b1)
-                    s.enabled = false;
-
-                Game scene1 = GetComponent<Game>();
-                scene1.enabled = true;
                 break;
         }
     }

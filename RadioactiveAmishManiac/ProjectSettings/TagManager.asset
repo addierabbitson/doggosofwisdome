@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - PauseMenu
+  - Obstacle
+  - Enemy
+  - Water
   layers:
   - Default
   - TransparentFX
