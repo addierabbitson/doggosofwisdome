@@ -42,12 +42,12 @@ public class GameManager : MonoBehaviour
 
         if (menu == null)
         {
-            menu = GameObject.Find("Canvas").transform;
-            pauseMenu = GameObject.Find("PauseMenu").gameObject;
-            settingMenu = GameObject.Find("SettingsMenu").gameObject;
-            gameUI = GameObject.Find("GUI").gameObject;
-            mainMenu = GameObject.Find("MainMenu").gameObject;
-            gameEnd = GameObject.Find("GameEnd").gameObject;
+            //menu = GameObject.Find("Canvas").transform;
+            //pauseMenu = GameObject.Find("PauseMenu").gameObject;
+            //settingMenu = GameObject.Find("SettingsMenu").gameObject;
+            //gameUI = GameObject.Find("GUI").gameObject;
+            //mainMenu = GameObject.Find("MainMenu").gameObject;
+            //gameEnd = GameObject.Find("GameEnd").gameObject;
             pauseMenu.SetActive(false);
             settingMenu.SetActive(false);
             gameUI.SetActive(false);

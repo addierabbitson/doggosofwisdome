@@ -47,6 +47,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 0
   previousState: 0
+  menu: {fileID: 0}
+  pauseMenu: {fileID: 0}
+  settingMenu: {fileID: 0}
+  gameUI: {fileID: 0}
+  mainMenu: {fileID: 0}
+  gameEnd: {fileID: 0}
 --- !u!114 &8875578320057720445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,9 +66,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
-  menu: {fileID: 0}
-  pauseMenu: {fileID: 0}
-  settingMenu: {fileID: 0}
 --- !u!114 &8875578320057720442
 MonoBehaviour:
   m_ObjectHideFlags: 0

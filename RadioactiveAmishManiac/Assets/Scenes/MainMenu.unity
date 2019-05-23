@@ -5425,5 +5425,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8875578320057720440, guid: ca017feb98c15574eb997296ff42a981,
+        type: 3}
+      propertyPath: menu
+      value: 
+      objectReference: {fileID: 652174846}
+    - target: {fileID: 8875578320057720440, guid: ca017feb98c15574eb997296ff42a981,
+        type: 3}
+      propertyPath: pauseMenu
+      value: 
+      objectReference: {fileID: 1860263077}
+    - target: {fileID: 8875578320057720440, guid: ca017feb98c15574eb997296ff42a981,
+        type: 3}
+      propertyPath: settingMenu
+      value: 
+      objectReference: {fileID: 1438884341}
+    - target: {fileID: 8875578320057720440, guid: ca017feb98c15574eb997296ff42a981,
+        type: 3}
+      propertyPath: gameUI
+      value: 
+      objectReference: {fileID: 2076296511}
+    - target: {fileID: 8875578320057720440, guid: ca017feb98c15574eb997296ff42a981,
+        type: 3}
+      propertyPath: mainMenu
+      value: 
+      objectReference: {fileID: 442661157}
+    - target: {fileID: 8875578320057720440, guid: ca017feb98c15574eb997296ff42a981,
+        type: 3}
+      propertyPath: gameEnd
+      value: 
+      objectReference: {fileID: 1609458299}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca017feb98c15574eb997296ff42a981, type: 3}
