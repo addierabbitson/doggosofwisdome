@@ -33,26 +33,19 @@ public class Game : BaseState
     public void BackToPause()
     {
         gameManager.settingMenu.SetActive(false);
-        if(SceneManager.GetActiveScene().name == "Main")
+        if(SceneManager.GetActiveScene().name != "MainMenu")
             gameManager.pauseMenu.SetActive(true);
     }
 
     public void Replay()
     {
-        SceneManager.LoadScene("Gabe");
-
-        BaseState[] b1 = gameManager.gameObject.GetComponents<BaseState>();
-        foreach (var s in b1)
-            s.enabled = false;
-
-        Game scene = gameManager.gameObject.GetComponent<Game>();
-        scene.enabled = true;
-
         gameManager.gameEnd.SetActive(false);
+        SceneManager.LoadScene("CamScene");
+        Time.timeScale = 1.0f;
     }
 
     public void Menu()
     {
-         
+         //TO FUCKIN DO
     }
 }

@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
                 //scene.enabled = true;
                 break;
             case States.GAME:
-                SceneManager.LoadScene("Gabe");
+                SceneManager.LoadScene("CamScene");
 
                 //BaseState[] b1 = GetComponents<BaseState>();
                 //foreach (var s in b1)
