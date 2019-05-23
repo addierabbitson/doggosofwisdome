@@ -27,7 +27,8 @@ public class LevelGenerator : MonoBehaviour
         directionCheck.z *= newChunk.bounds.z;
         float directionLength = directionCheck.magnitude;
 
-        nextPlace += directionLength * placeDirection * 0.5f;
+        if (placedChunks.Count > 0)
+            nextPlace += directionLength * placeDirection * 0.5f;
         // place it properly
         newChunk.transform.localPosition = nextPlace;
 
