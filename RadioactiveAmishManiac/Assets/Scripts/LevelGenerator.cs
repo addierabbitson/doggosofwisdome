@@ -5,6 +5,9 @@ using UnityEngine;
 public class LevelGenerator : MonoBehaviour
 {
 
+    [Header("Chunks to choose from for the start")]
+    public List<LevelChunk> startChunks;
+    [Header("Chunks for rest of the level")]
     public List<LevelChunk> levelChunks;
     public Vector3 placeDirection = Vector3.forward;
 
@@ -14,17 +17,9 @@ public class LevelGenerator : MonoBehaviour
 
     public void PlaceChunk()
     {
-        // choose random chunk index that wasn't chosen last time
-        int chunkIndex = 0;
-        do
-        {
-            chunkIndex = Random.Range(0, levelChunks.Count);
-        } while (chunkIndex == lastChunkIndex);
-        // keep track of this index so we don't spawn the same one twice
-        lastChunkIndex = chunkIndex;
-
+        LevelChunk toSpawn = placedChunks.Count > 0 ? GetRandomLevelChunk() : GetRandomStartChunk();
         // make new chunk
-        LevelChunk newChunk = Instantiate(levelChunks[chunkIndex], transform);
+        LevelChunk newChunk = Instantiate(toSpawn, transform);
 
         Vector3 directionCheck = placeDirection;
         directionCheck.x *= newChunk.bounds.x;
@@ -92,6 +87,27 @@ public class LevelGenerator : MonoBehaviour
         placedChunks.Clear();
 
         nextPlace = Vector3.zero;
+    }
+
+    LevelChunk GetRandomLevelChunk()
+    {
+        // choose random chunk index that wasn't chosen last time
+        int chunkIndex = 0;
+        do
+        {
+            chunkIndex = Random.Range(0, levelChunks.Count);
+        } while (chunkIndex == lastChunkIndex);
+        // keep track of this index so we don't spawn the same one twice
+        lastChunkIndex = chunkIndex;
+
+        return levelChunks[chunkIndex];
+    }
+
+    LevelChunk GetRandomStartChunk()
+    {
+        if (startChunks.Count <= 0)
+            return GetRandomLevelChunk();
+        return startChunks[Random.Range(0, startChunks.Count)];
     }
 
 }
