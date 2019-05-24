@@ -46,6 +46,7 @@ public class Game : BaseState
 
     public void Menu()
     {
-         //TO FUCKIN DO
+        //TO FUCKIN DO
+        gameManager.currentState = States.MAINMENU;
     }
 }

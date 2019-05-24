@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     public States currentState;
     public States previousState;
 
-    public Transform menu;
+    public static Transform menu;
     public GameObject pauseMenu;
     public GameObject settingMenu;
     public GameObject gameUI;
@@ -46,18 +46,11 @@ public class GameManager : MonoBehaviour
 
         if (menu != null)
         {
-            //menu = GameObject.Find("Canvas").transform;
-            //pauseMenu = GameObject.Find("PauseMenu").gameObject;
-            //settingMenu = GameObject.Find("SettingsMenu").gameObject;
-            //gameUI = GameObject.Find("GUI").gameObject;
-            //mainMenu = GameObject.Find("MainMenu").gameObject;
-            //gameEnd = GameObject.Find("GameEnd").gameObject;
             pauseMenu.SetActive(false);
             settingMenu.SetActive(false);
             gameUI.SetActive(false);
             gameEnd.SetActive(false);
         }
-        DontDestroyOnLoad(menu.gameObject);
     }
 
     private void Update()
@@ -80,24 +73,15 @@ public class GameManager : MonoBehaviour
         switch (currentState)
         {
             case States.MAINMENU:
+                Time.timeScale = 1.0f;
                 SceneManager.LoadScene("MainMenu");
 
-                //BaseState[] b = GetComponents<BaseState>();
-                //foreach (var s in b)
-                //    s.enabled = false;
-
-                //MainMenu scene = GetComponent<MainMenu>();
-                //scene.enabled = true;
                 break;
             case States.GAME:
+                Time.timeScale = 1.0f;
                 SceneManager.LoadScene("CamScene");
+                gameUI.SetActive(true);
 
-                //BaseState[] b1 = GetComponents<BaseState>();
-                //foreach (var s in b1)
-                //    s.enabled = false;
-
-                //Game scene1 = GetComponent<Game>();
-                //scene1.enabled = true;
                 break;
         }
     }
