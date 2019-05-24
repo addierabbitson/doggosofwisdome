@@ -18,6 +18,11 @@ public class LevelGenerator : MonoBehaviour
     public void PlaceChunk()
     {
         LevelChunk toSpawn = placedChunks.Count > 0 ? GetRandomLevelChunk() : GetRandomStartChunk();
+        if(toSpawn == null)
+        {
+            Debug.Log(lastChunkIndex);
+            return;
+        }
         // make new chunk
         LevelChunk newChunk = Instantiate(toSpawn, transform);
 

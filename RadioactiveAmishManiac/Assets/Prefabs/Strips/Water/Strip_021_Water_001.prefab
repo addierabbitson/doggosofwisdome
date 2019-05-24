@@ -160,11 +160,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5605265628927519628}
     m_Modifications:
-    - target: {fileID: 5885394738573980414, guid: 7218ac2035a3cae4b9f86c12987d7f9f,
-        type: 3}
-      propertyPath: m_Name
-      value: Ground_003_Water_001
-      objectReference: {fileID: 0}
     - target: {fileID: 6045286687815173482, guid: 7218ac2035a3cae4b9f86c12987d7f9f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -219,6 +214,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5885394738573980414, guid: 7218ac2035a3cae4b9f86c12987d7f9f,
+        type: 3}
+      propertyPath: m_Name
+      value: Ground_003_Water_001
       objectReference: {fileID: 0}
     - target: {fileID: 4969309409355630754, guid: 7218ac2035a3cae4b9f86c12987d7f9f,
         type: 3}
@@ -284,7 +284,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 02f848049f655da4aa91b7532d50498f, type: 2}
+      objectReference: {fileID: 2100000, guid: 71fcc80229a594543bffc712d01e52e3, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7218ac2035a3cae4b9f86c12987d7f9f, type: 3}
 --- !u!4 &4247464118418468481 stripped
@@ -300,11 +300,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5605265628927519628}
     m_Modifications:
-    - target: {fileID: 4416340112862250372, guid: e6730fdbdebcced418b2959dd240f35e,
-        type: 3}
-      propertyPath: m_Name
-      value: Barrel_002_Group
-      objectReference: {fileID: 0}
     - target: {fileID: 5304730163474130266, guid: e6730fdbdebcced418b2959dd240f35e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -359,6 +354,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4416340112862250372, guid: e6730fdbdebcced418b2959dd240f35e,
+        type: 3}
+      propertyPath: m_Name
+      value: Barrel_002_Group
       objectReference: {fileID: 0}
     - target: {fileID: 4832323470807119518, guid: e6730fdbdebcced418b2959dd240f35e,
         type: 3}
