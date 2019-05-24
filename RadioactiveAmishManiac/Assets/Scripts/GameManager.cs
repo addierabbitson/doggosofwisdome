@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     public States currentState;
     public States previousState;
 
-    public static Transform menu;
+    public Transform menu;
     public GameObject pauseMenu;
     public GameObject settingMenu;
     public GameObject gameUI;
