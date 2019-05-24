@@ -14,6 +14,7 @@ public class Game : BaseState
     {
         gameManager.pauseMenu.SetActive(true);
         gameManager.gameUI.SetActive(false);
+        gameManager.currentPopup = Popup.PAUSE;
         Time.timeScale = 0.0f;
     }
 
@@ -34,14 +35,12 @@ public class Game : BaseState
     {
         gameManager.settingMenu.SetActive(false);
         if (SceneManager.GetActiveScene().name != "MainMenu")
-            gameManager.pauseMenu.SetActive(true);
-    }
-
-    public void BackToPauseGameEnd()
-    {
-        gameManager.settingMenu.SetActive(false);
-        if (SceneManager.GetActiveScene().name != "MainMenu")
-            gameManager.gameEnd.SetActive(true);
+        {
+            if (gameManager.currentPopup == Popup.PAUSE)
+                gameManager.pauseMenu.SetActive(true);
+            else if(gameManager.currentPopup == Popup.GAMEEND)
+                gameManager.gameEnd.SetActive(true);
+        }
     }
 
     public void Twitter() {
@@ -55,8 +54,10 @@ public class Game : BaseState
         Time.timeScale = 1.0f;
     }
 
-    public void Menu()
+    public void MainMenu()
     {
+        SceneManager.LoadScene("MainMenu");
         gameManager.currentState = States.MAINMENU;
+        gameManager.currentPopup = Popup.COUNT;
     }
 }

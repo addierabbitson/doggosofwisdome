@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
 
     public States currentState;
     public States previousState;
+    public Popup currentPopup;
 
     public Transform menu;
     public GameObject pauseMenu;
@@ -55,6 +56,8 @@ public class GameManager : MonoBehaviour
             gameUI.SetActive(false);
             gameEnd.SetActive(false);
         }
+
+        currentPopup = Popup.COUNT;
     }
 
     private void Update()
@@ -99,12 +102,16 @@ public class GameManager : MonoBehaviour
                 pauseMenu.SetActive(false);
                 settingMenu.SetActive(false);
                 gameUI.SetActive(false);
+                gameEnd.SetActive(false);
+                //mAudioSource.PlayOneShot();
                 break;
             case States.GAME:
                 gameUI.SetActive(true);
                 pauseMenu.SetActive(false);
                 settingMenu.SetActive(false);
                 mainMenu.SetActive(false);
+                gameEnd.SetActive(false);
+                // mAudioSource.PlayOneShot();
                 break;
         }
     }

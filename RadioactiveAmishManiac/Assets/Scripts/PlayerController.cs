@@ -71,6 +71,7 @@ public class PlayerController : MonoBehaviour
             gameManager.gameUI.SetActive(false);
             gameManager.gameEnd.SetActive(true);
             isPlayerDead = true;
+            gameManager.currentPopup = Popup.GAMEEND;
             OnDeath();
         }
 

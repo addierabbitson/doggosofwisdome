@@ -7,5 +7,6 @@ public class MainMenu : BaseState
     public void StartButton()
     {
         gameManager.currentState = States.GAME;
+        gameManager.currentPopup = Popup.COUNT;
     }
 }
