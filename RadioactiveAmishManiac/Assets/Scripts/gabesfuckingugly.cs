@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Canvas : MonoBehaviour
+public class gabesfuckingugly : MonoBehaviour
 {
-    public static Canvas Instance;
+    public static gabesfuckingugly Instance;
 
     private void Awake()
     {
