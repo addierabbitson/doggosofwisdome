@@ -53,6 +53,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1451075758418340893}
+  - component: {fileID: 8356821453567219172}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -76,6 +77,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8356821453567219172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1451075758418340894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe6ea302816f346469ff9d2d49711e6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentDirection: 0
+  currentPos: {x: 0, y: 0, z: 0}
+  targetPos: {x: 0, y: 0, z: 0}
+  isMoving: 0
+  movingSpeed: 0.1
+  hopHeight: 1
+  gameManager: {fileID: 0}
+  health: 1
+  isPlayerDead: 0
+  Score: 0
+  maxDragDistance: 20
+  splashParticles: {fileID: 3722755565723702167, guid: 849ee116dbd60204ea9db9fed65b3839,
+    type: 3}
+  deathParticles: {fileID: 6973050683537165951, guid: 87ab55f632e5c7b4e8b8f69b7d14702f,
+    type: 3}
+  fd: {x: 0, y: 0}
+  fu: {x: 0, y: 0}
+  detectSwipeOnlyAfterRelease: 0
+  minDistanceForSwipe: 20
 --- !u!1001 &1451075758692370806
 PrefabInstance:
   m_ObjectHideFlags: 0
