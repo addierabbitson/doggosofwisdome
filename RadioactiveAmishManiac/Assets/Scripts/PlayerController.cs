@@ -24,7 +24,6 @@ public class PlayerController : MonoBehaviour
 {
     public Dictionary<PlayerDirection, Vector3> direction;
     public PlayerDirection currentDirection;
-    public PlayerDirection directionNotToMove;
     public Vector3 currentPos;
     public Vector3 targetPos;
     public bool isMoving;
@@ -34,6 +33,10 @@ public class PlayerController : MonoBehaviour
     public int health = 1;
     public bool isPlayerDead = false;
     public int Score;
+
+    bool isOnPlatform = false;
+    float originalY = 0.0f;
+    Transform originalParent = null;
 
     public Vector2 fingerDownPosition;
     public Vector2 fingerUpPosition;
@@ -51,7 +54,9 @@ public class PlayerController : MonoBehaviour
         direction.Add(PlayerDirection.BACKWARD, new Vector3(0, 0, -1));
         direction.Add(PlayerDirection.LEFT, new Vector3(-1, 0, 0));
         direction.Add(PlayerDirection.RIGHT, new Vector3(1, 0, 0));
-        directionNotToMove = PlayerDirection.COUNT;
+
+        originalParent = transform.parent;
+        originalY = transform.position.y;
     }
 
     private void Update()
@@ -67,33 +72,29 @@ public class PlayerController : MonoBehaviour
             gameManager.gameEnd.SetActive(true);
             isPlayerDead = true;
         }
+
         RaycastHit hit;
         if (Physics.Raycast(new Ray(this.transform.position, -transform.up), out hit, 1))
         {
             if (hit.transform.CompareTag("Water"))
-            {
                 health = 0;
-            }
-        }
-        else
-        {
-            directionNotToMove = PlayerDirection.COUNT;
         }
 
-        if (Input.GetKeyDown(KeyCode.W) && !isMoving && directionNotToMove != PlayerDirection.FORWARD)
+        if (Input.GetKeyDown(KeyCode.W) && !isMoving)
         {
             Score++;
             MoveInDirection(PlayerDirection.FORWARD);
         }
-        if (Input.GetKeyDown(KeyCode.S) && !isMoving && directionNotToMove != PlayerDirection.BACKWARD)
+        if (Input.GetKeyDown(KeyCode.S) && !isMoving)
         {
+            Score--;
             MoveInDirection(PlayerDirection.BACKWARD);
         }
-        if (Input.GetKeyDown(KeyCode.A) && !isMoving && directionNotToMove != PlayerDirection.LEFT)
+        if (Input.GetKeyDown(KeyCode.A) && !isMoving && !isOnPlatform)
         {
             MoveInDirection(PlayerDirection.LEFT);
         }
-        if (Input.GetKeyDown(KeyCode.D) && !isMoving && directionNotToMove != PlayerDirection.RIGHT)
+        if (Input.GetKeyDown(KeyCode.D) && !isMoving && !isOnPlatform)
         {
             MoveInDirection(PlayerDirection.RIGHT);
         }
@@ -122,12 +123,32 @@ public class PlayerController : MonoBehaviour
             newPos.y = y + hopHeight;
             transform.localPosition = newPos;
             timer += Time.fixedDeltaTime;
+
+            // check for platform hits!
+            if (timer / movingSpeed > 0.5f)
+            {
+                RaycastHit[] hits = Physics.RaycastAll(this.transform.position, Vector3.down, 2.0f);
+                foreach (var hit in hits)
+                {
+                    Debug.Log(hit.collider.tag);
+                    if (hit.transform.CompareTag("Platform"))
+                    {
+                        transform.parent = hit.transform;
+                        isOnPlatform = true;
+                        break;
+                    }
+                }
+            }
+
             yield return new WaitForFixedUpdate();
         }
         newPos.y = y;
-        transform.localPosition = newPos;
-        isMoving = false;
+        transform.localPosition = isOnPlatform ? Vector3.zero : newPos;
 
+        temp = transform.position;
+        temp.y = originalY;
+        transform.position = temp;
+        isMoving = false;
     }
 
     void OnDrawGizmos()
@@ -145,6 +166,17 @@ public class PlayerController : MonoBehaviour
                 return;
         }
 
+        if (isOnPlatform)
+        {
+            transform.SetParent(originalParent, true);
+
+            Vector3 tempPos = transform.position;
+            tempPos.x = (int)tempPos.x;
+            transform.position = tempPos;
+
+            isOnPlatform = false;
+        }
+
         UpdateDirection(dir);
         currentPos = transform.localPosition;
         targetPos = currentPos + direction[dir];
@@ -152,6 +184,16 @@ public class PlayerController : MonoBehaviour
         StartCoroutine("Hop");
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+            this.health = 0;
+    }
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if (collision.gameObject.CompareTag("Enemy"))
+    //        health = 0;
+    //}
     public void OnEndDrag(PointerEventData eventData)
     {
         Vector3 dragVectorDirection = (eventData.position - eventData.pressPosition).normalized;

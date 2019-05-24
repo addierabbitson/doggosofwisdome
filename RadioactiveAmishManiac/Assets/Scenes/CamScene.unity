@@ -179,10 +179,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5886712428611049, guid: c812d0bf0657d0a40ae3a0d5f53f76b0, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c812d0bf0657d0a40ae3a0d5f53f76b0, type: 3}
 --- !u!1 &286626293
@@ -443,7 +439,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startChunks:
-  - {fileID: 684258654622092881, guid: 3a2cd11ae66c2744f9759f59b3d15eb7, type: 3}
   - {fileID: 7297754759184056771, guid: cb9fa7909670e9e49a794a51a8d38e8a, type: 3}
   levelChunks:
   - {fileID: 1794680113661921291, guid: f0582199576fdea42b6cb695f4ae1689, type: 3}
@@ -618,7 +613,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1491729252}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 3}
+  m_LocalPosition: {x: 0, y: 0, z: -2}
   m_LocalScale: {x: 7.6, y: 6.7, z: 1}
   m_Children: []
   m_Father: {fileID: 1314060223}
