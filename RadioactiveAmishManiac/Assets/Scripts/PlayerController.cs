@@ -113,7 +113,7 @@ public class PlayerController : MonoBehaviour
                     {
                         if (v2Difference.x > v2Difference.y)
                         {
-                            if(fu.x > fd.x)
+                            if(fu.x < fd.x)
                             {
                                 MoveInDirection(PlayerDirection.LEFT);
                                 Debug.Log("Left");
@@ -264,6 +264,8 @@ public class PlayerController : MonoBehaviour
 
     void MoveInDirection(PlayerDirection dir)
     {
+        if (isMoving)
+            return;
         RaycastHit hit;
         if (Physics.Raycast(new Ray(this.transform.position, direction[dir]), out hit, 1))
         {
