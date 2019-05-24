@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour
 
         int nTouches = Input.touchCount;
 
-        if(nTouches > 0)
+        if (nTouches > 0)
         {
             print(nTouches + "touch detected");
 
@@ -113,7 +113,7 @@ public class PlayerController : MonoBehaviour
                     {
                         if (v2Difference.x > v2Difference.y)
                         {
-                            if(fu.x < fd.x)
+                            if (fu.x < fd.x)
                             {
                                 MoveInDirection(PlayerDirection.LEFT);
                                 Debug.Log("Left");
@@ -144,13 +144,13 @@ public class PlayerController : MonoBehaviour
                             }
                         }
                     }
-                }
-                else
-                {
-                    Score++;
-                    if (gabesfuckingugly.Instance)
-                        gabesfuckingugly.Instance.SetScore(Score);
-                    MoveInDirection(PlayerDirection.FORWARD);
+                    else
+                    {
+                        Score++;
+                        if (gabesfuckingugly.Instance)
+                            gabesfuckingugly.Instance.SetScore(Score);
+                        MoveInDirection(PlayerDirection.FORWARD);
+                    }
                 }
             }
         }

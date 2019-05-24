@@ -23,6 +23,7 @@ public class PlatformController : MonoBehaviour
     private void Awake()
     {
         timer = Random.Range(0.0f, moveInterval * 2.0f);
+        moveInterval += Random.Range(-0.3f, 0.3f);
         foreach (Transform t in transform)
             toMove = t;
 
