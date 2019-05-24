@@ -130,7 +130,6 @@ public class PlayerController : MonoBehaviour
                 RaycastHit[] hits = Physics.RaycastAll(this.transform.position, Vector3.down, 2.0f);
                 foreach (var hit in hits)
                 {
-                    Debug.Log(hit.collider.tag);
                     if (hit.transform.CompareTag("Platform"))
                     {
                         transform.parent = hit.transform;
