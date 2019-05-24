@@ -2115,7 +2115,7 @@ GameObject:
   m_Component:
   - component: {fileID: 731919702}
   m_Layer: 5
-  m_Name: GUI (1)
+  m_Name: GUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2570,7 +2570,7 @@ GameObject:
   m_Component:
   - component: {fileID: 870058903}
   m_Layer: 5
-  m_Name: PauseMenu (1)
+  m_Name: PauseMenu
   m_TagString: PauseMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3535,7 +3535,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1065768705}
   m_Layer: 5
-  m_Name: GameEnd (1)
+  m_Name: GameEnd
   m_TagString: PauseMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4506,7 +4506,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1255141210}
   m_Layer: 5
-  m_Name: SettingsMenu (1)
+  m_Name: SettingsMenu
   m_TagString: PauseMenu
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8417,7 +8417,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2060995231}
   m_Layer: 5
-  m_Name: MainMenu (1)
+  m_Name: MainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8816,41 +8816,41 @@ PrefabInstance:
         type: 3}
       propertyPath: pauseMenu
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 870058902}
     - target: {fileID: 8875578320057720440, guid: ca017feb98c15574eb997296ff42a981,
         type: 3}
       propertyPath: settingMenu
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1255141209}
     - target: {fileID: 8875578320057720440, guid: ca017feb98c15574eb997296ff42a981,
         type: 3}
       propertyPath: gameUI
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 731919701}
     - target: {fileID: 8875578320057720440, guid: ca017feb98c15574eb997296ff42a981,
         type: 3}
       propertyPath: mainMenu
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2060995230}
     - target: {fileID: 8875578320057720440, guid: ca017feb98c15574eb997296ff42a981,
         type: 3}
       propertyPath: gameEnd
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1065768704}
     - target: {fileID: 8875578320057720440, guid: ca017feb98c15574eb997296ff42a981,
         type: 3}
       propertyPath: masterSound
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1734411084}
     - target: {fileID: 8875578320057720440, guid: ca017feb98c15574eb997296ff42a981,
         type: 3}
       propertyPath: bgmsound
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2117596924}
     - target: {fileID: 8875578320057720440, guid: ca017feb98c15574eb997296ff42a981,
         type: 3}
       propertyPath: sfxsound
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 617883103}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca017feb98c15574eb997296ff42a981, type: 3}
