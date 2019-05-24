@@ -47,7 +47,7 @@ MonoBehaviour:
   position1: {x: -6, y: 0, z: 0}
   position2: {x: 5.6, y: 0, z: 0}
   moveInterval: 4.8
-  moveSmooth: 1
+  moveSmooth: 0
 --- !u!1 &8374077481093277505
 GameObject:
   m_ObjectHideFlags: 0
