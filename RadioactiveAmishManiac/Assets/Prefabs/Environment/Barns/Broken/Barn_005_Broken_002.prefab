@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 7121974763828458761}
   m_Layer: 0
   m_Name: Collider
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,6 +131,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 890e3021e936d614f9fbbc98add10b42, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f445094beeeda4d4e89a0575cc27e6ff, type: 2}
+    - target: {fileID: 2300000, guid: 890e3021e936d614f9fbbc98add10b42, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: f445094beeeda4d4e89a0575cc27e6ff, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 890e3021e936d614f9fbbc98add10b42, type: 3}
 --- !u!4 &4363884805818854303 stripped
