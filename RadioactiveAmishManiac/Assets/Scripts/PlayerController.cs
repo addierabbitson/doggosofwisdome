@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     public bool isPlayerDead = false;
     public int Score;
     public int maxDragDistance;
+    public Transform squishObject;
 
     public GameObject splashParticles;
     public GameObject deathParticles;
@@ -50,6 +51,13 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField]
     private float minDistanceForSwipe = 20f;
+
+    [Header("Squish")]
+    public float squishStrength = 1.0f;
+    public float squishDrag = 1.0f;
+    public float squishAmount = 1.0f;
+    float squishHeight = 1.0f;
+    float squishVel = 0.0f;
 
     private void Start()
     {
@@ -189,6 +197,20 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        squishVel -= (squishHeight - 1.0f) * squishStrength * Time.fixedDeltaTime;
+        squishVel -= (squishVel * squishDrag) * Time.fixedDeltaTime;
+
+        squishHeight += squishVel * Time.fixedDeltaTime;
+
+        Vector3 s = Vector3.one;
+        s.y = squishHeight;
+        s.x = 1.0f + (1.0f - s.y);
+        s.z = s.x;
+        squishObject.localScale = s;
+    }
+
     public void UpdateDirection(PlayerDirection _dir)
     {
         Vector3 target = direction[_dir];
@@ -199,6 +221,7 @@ public class PlayerController : MonoBehaviour
 
     IEnumerator Hop()
     {
+        squishVel -= squishAmount*2.0f;
         isMoving = true;
         float timer = 0.0f;
         Vector3 temp = transform.localPosition;
@@ -214,7 +237,7 @@ public class PlayerController : MonoBehaviour
             timer += Time.fixedDeltaTime;
 
             // check for platform hits!
-            if (timer / movingSpeed > 0.5f)
+            if (timer / movingSpeed > 0.8f)
             {
                 RaycastHit[] hits = Physics.RaycastAll(this.transform.position, Vector3.down, 2.0f);
                 foreach (var hit in hits)
@@ -237,6 +260,34 @@ public class PlayerController : MonoBehaviour
         temp.y = originalY;
         transform.position = temp;
         isMoving = false;
+        squishVel += squishAmount;
+    }
+
+    IEnumerator Squish()
+    {
+        const float squishTime = 0.3f;
+
+        for (float t = 0; t < squishTime; t += Time.fixedDeltaTime)
+        {
+            if (Time.timeScale == 0.0f)
+                break;
+
+            Vector3 s = Vector3.one;
+            s.y = SquishEase(t / squishTime);
+            s.x = 1.0f + (1.0f - s.y);
+            s.z = s.x;
+            squishObject.localScale = s;
+
+            yield return new WaitForFixedUpdate();
+        }
+
+        squishObject.localScale = Vector3.one;
+    }
+
+    float SquishEase(float t)
+    {
+        // y = 1.2 - 6.438095*x + 15.28571*x^2 - 9.047619*x^3
+        return 1.2f - (6.438095f * t) + (15.28571f * (t * t)) - (9.047619f * (t * t * t));
     }
 
     void OnDeath()
@@ -270,7 +321,10 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(new Ray(this.transform.position, direction[dir]), out hit, 1))
         {
             if (hit.transform.CompareTag("Obstacle"))
+            {
+                squishVel += squishAmount / 2.0f;
                 return;
+            }
         }
 
         if (isOnPlatform)
