@@ -107,9 +107,11 @@ public class PlayerController : MonoBehaviour
                 {
                     fu = touch.position;
 
-                    if (Mathf.Abs(fu.x - fd.x) > maxDragDistance || Mathf.Abs(fu.y - fd.y) > maxDragDistance)
+                    Vector2 v2Difference = new Vector2(Mathf.Abs(fu.x - fd.x), Mathf.Abs(fu.y - fd.y));
+
+                    if (v2Difference.x > maxDragDistance || v2Difference.y > maxDragDistance)
                     {
-                        if (Mathf.Abs(fu.x - fd.x) > Mathf.Abs(fu.y - fd.y))
+                        if (v2Difference.x > v2Difference.y)
                         {
                             if(fu.x > fd.x)
                             {
@@ -126,11 +128,11 @@ public class PlayerController : MonoBehaviour
                         {
                             if (fu.y > fd.y)
                             {
-                                Score++;
-                                if (gabesfuckingugly.Instance)
-                                    gabesfuckingugly.Instance.SetScore(Score);
-                                MoveInDirection(PlayerDirection.FORWARD);
-                                Debug.Log("Forward");
+                                //Score++;
+                                //if (gabesfuckingugly.Instance)
+                                //    gabesfuckingugly.Instance.SetScore(Score);
+                                //MoveInDirection(PlayerDirection.FORWARD);
+                                //Debug.Log("Forward");
                             }
                             else
                             {
