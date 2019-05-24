@@ -29,9 +29,13 @@ public class GameManager : MonoBehaviour
     public Slider bgmsound;
     public Slider sfxsound;
 
+    private AudioSource mAudioSource;
+
     private void Awake()
     {
         currentState = States.MAINMENU;
+
+        mAudioSource = GetComponent<AudioSource>();
 
         if (Instance != null && Instance != this)
         {
