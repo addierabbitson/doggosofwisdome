@@ -178,6 +178,8 @@ public class PlayerController : MonoBehaviour
 
         StopAllCoroutines();
         this.gameObject.SetActive(false);
+
+        CameraScript.instance.ShakeCamera(0.3f, 10.0f);
     }
 
     void OnDrawGizmos()
