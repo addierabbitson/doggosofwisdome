@@ -141,11 +141,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 343910833552407760}
     m_Modifications:
-    - target: {fileID: 8596958597451244785, guid: 96bff6a9d97303f4f98a03dfccc1bb27,
-        type: 3}
-      propertyPath: m_Name
-      value: Strip_001_Road_001
-      objectReference: {fileID: 0}
     - target: {fileID: 8596958597451244786, guid: 96bff6a9d97303f4f98a03dfccc1bb27,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -201,6 +196,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8596958597451244785, guid: 96bff6a9d97303f4f98a03dfccc1bb27,
+        type: 3}
+      propertyPath: m_Name
+      value: Strip_001_Road_001
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96bff6a9d97303f4f98a03dfccc1bb27, type: 3}
 --- !u!4 &6145333727035608159 stripped
@@ -216,11 +216,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 343910833552407760}
     m_Modifications:
-    - target: {fileID: 8596958597451244785, guid: 96bff6a9d97303f4f98a03dfccc1bb27,
-        type: 3}
-      propertyPath: m_Name
-      value: Strip_001_Road_001 (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 8596958597451244786, guid: 96bff6a9d97303f4f98a03dfccc1bb27,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -275,6 +270,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596958597451244785, guid: 96bff6a9d97303f4f98a03dfccc1bb27,
+        type: 3}
+      propertyPath: m_Name
+      value: Strip_001_Road_001 (4)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96bff6a9d97303f4f98a03dfccc1bb27, type: 3}
@@ -426,6 +426,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3051863986965899037, guid: 9ef53b1ffb6c4864c934d53c4d02c482,
+        type: 3}
+      propertyPath: position2.x
+      value: 5.5999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051863986965899037, guid: 9ef53b1ffb6c4864c934d53c4d02c482,
+        type: 3}
+      propertyPath: moveInterval
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ef53b1ffb6c4864c934d53c4d02c482, type: 3}
 --- !u!4 &8987560788148117820 stripped
@@ -516,11 +526,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 343910833552407760}
     m_Modifications:
-    - target: {fileID: 6373343690380946927, guid: 68503d9fa2e8ecd46b96daf985d16433,
-        type: 3}
-      propertyPath: m_Name
-      value: Strip_010_Grass_009_Trees_009
-      objectReference: {fileID: 0}
     - target: {fileID: 2041318302233304522, guid: 68503d9fa2e8ecd46b96daf985d16433,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -576,6 +581,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6373343690380946927, guid: 68503d9fa2e8ecd46b96daf985d16433,
+        type: 3}
+      propertyPath: m_Name
+      value: Strip_010_Grass_009_Trees_009
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68503d9fa2e8ecd46b96daf985d16433, type: 3}
 --- !u!4 &3168176647380648394 stripped
@@ -591,11 +601,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 343910833552407760}
     m_Modifications:
-    - target: {fileID: 8596958597451244785, guid: 96bff6a9d97303f4f98a03dfccc1bb27,
-        type: 3}
-      propertyPath: m_Name
-      value: Strip_001_Road_001 (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 8596958597451244786, guid: 96bff6a9d97303f4f98a03dfccc1bb27,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -650,6 +655,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596958597451244785, guid: 96bff6a9d97303f4f98a03dfccc1bb27,
+        type: 3}
+      propertyPath: m_Name
+      value: Strip_001_Road_001 (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96bff6a9d97303f4f98a03dfccc1bb27, type: 3}
@@ -801,6 +811,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3051863986965899037, guid: 9ef53b1ffb6c4864c934d53c4d02c482,
+        type: 3}
+      propertyPath: position2.x
+      value: 5.5999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051863986965899037, guid: 9ef53b1ffb6c4864c934d53c4d02c482,
+        type: 3}
+      propertyPath: moveInterval
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ef53b1ffb6c4864c934d53c4d02c482, type: 3}
 --- !u!4 &2256513656860570986 stripped
@@ -875,6 +895,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051863986965899037, guid: 9ef53b1ffb6c4864c934d53c4d02c482,
+        type: 3}
+      propertyPath: position2.x
+      value: 5.5999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 3051863986965899037, guid: 9ef53b1ffb6c4864c934d53c4d02c482,
+        type: 3}
+      propertyPath: moveInterval
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ef53b1ffb6c4864c934d53c4d02c482, type: 3}
@@ -966,11 +996,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 343910833552407760}
     m_Modifications:
-    - target: {fileID: 8596958597451244785, guid: 96bff6a9d97303f4f98a03dfccc1bb27,
-        type: 3}
-      propertyPath: m_Name
-      value: Strip_001_Road_001 (3)
-      objectReference: {fileID: 0}
     - target: {fileID: 8596958597451244786, guid: 96bff6a9d97303f4f98a03dfccc1bb27,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1026,6 +1051,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8596958597451244785, guid: 96bff6a9d97303f4f98a03dfccc1bb27,
+        type: 3}
+      propertyPath: m_Name
+      value: Strip_001_Road_001 (3)
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96bff6a9d97303f4f98a03dfccc1bb27, type: 3}
 --- !u!4 &1184427922857618804 stripped
@@ -1041,11 +1071,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 343910833552407760}
     m_Modifications:
-    - target: {fileID: 1364903686640547864, guid: 2413ae0255f5f09458ea09d7e607d713,
-        type: 3}
-      propertyPath: m_Name
-      value: Strip_002_Grass_001_Trees_001
-      objectReference: {fileID: 0}
     - target: {fileID: 1364903686640547867, guid: 2413ae0255f5f09458ea09d7e607d713,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1100,6 +1125,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1364903686640547864, guid: 2413ae0255f5f09458ea09d7e607d713,
+        type: 3}
+      propertyPath: m_Name
+      value: Strip_002_Grass_001_Trees_001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2413ae0255f5f09458ea09d7e607d713, type: 3}

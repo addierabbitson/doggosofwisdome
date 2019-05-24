@@ -360,16 +360,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrel_002_Group
       objectReference: {fileID: 0}
-    - target: {fileID: 4832323470807119518, guid: e6730fdbdebcced418b2959dd240f35e,
-        type: 3}
-      propertyPath: position1.x
-      value: -15.71
-      objectReference: {fileID: 0}
-    - target: {fileID: 4832323470807119518, guid: e6730fdbdebcced418b2959dd240f35e,
-        type: 3}
-      propertyPath: position2.x
-      value: 11.45
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e6730fdbdebcced418b2959dd240f35e, type: 3}
 --- !u!4 &2363146541259666649 stripped

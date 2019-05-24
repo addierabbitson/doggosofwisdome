@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e27c4d713b033be4e8cd419138bf3143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position1: {x: 0, y: 0, z: 0}
-  position2: {x: 0, y: 0, z: 0}
+  position1: {x: -6, y: 0, z: 0}
+  position2: {x: 5.6, y: 0, z: 0}
   moveInterval: 4.8
   moveSmooth: 1
 --- !u!1 &8374077481093277505
@@ -103,10 +103,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1033845685309886122}
     m_Modifications:
-    - target: {fileID: 100000, guid: 282e8be2e1281644aa7e73e77d2c6e80, type: 3}
-      propertyPath: m_Name
-      value: Barrel (4)
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 282e8be2e1281644aa7e73e77d2c6e80, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.085
@@ -151,6 +147,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 282e8be2e1281644aa7e73e77d2c6e80, type: 3}
+      propertyPath: m_Name
+      value: Barrel (4)
+      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 282e8be2e1281644aa7e73e77d2c6e80, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -170,10 +170,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1033845685309886122}
     m_Modifications:
-    - target: {fileID: 100000, guid: 282e8be2e1281644aa7e73e77d2c6e80, type: 3}
-      propertyPath: m_Name
-      value: Barrel
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 282e8be2e1281644aa7e73e77d2c6e80, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -218,6 +214,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 282e8be2e1281644aa7e73e77d2c6e80, type: 3}
+      propertyPath: m_Name
+      value: Barrel
+      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 282e8be2e1281644aa7e73e77d2c6e80, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -237,10 +237,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1033845685309886122}
     m_Modifications:
-    - target: {fileID: 100000, guid: 282e8be2e1281644aa7e73e77d2c6e80, type: 3}
-      propertyPath: m_Name
-      value: Barrel (2)
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 282e8be2e1281644aa7e73e77d2c6e80, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.563
@@ -285,6 +281,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 282e8be2e1281644aa7e73e77d2c6e80, type: 3}
+      propertyPath: m_Name
+      value: Barrel (2)
+      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 282e8be2e1281644aa7e73e77d2c6e80, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -304,10 +304,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1033845685309886122}
     m_Modifications:
-    - target: {fileID: 100000, guid: 282e8be2e1281644aa7e73e77d2c6e80, type: 3}
-      propertyPath: m_Name
-      value: Barrel (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 282e8be2e1281644aa7e73e77d2c6e80, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.541
@@ -351,6 +347,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 282e8be2e1281644aa7e73e77d2c6e80, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 282e8be2e1281644aa7e73e77d2c6e80, type: 3}
+      propertyPath: m_Name
+      value: Barrel (1)
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 282e8be2e1281644aa7e73e77d2c6e80, type: 3}
       propertyPath: m_Materials.Array.data[0]
