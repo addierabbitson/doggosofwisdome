@@ -37,6 +37,13 @@ public class Game : BaseState
             gameManager.pauseMenu.SetActive(true);
     }
 
+    public void BackToPauseGameEnd()
+    {
+        gameManager.settingMenu.SetActive(false);
+        if (SceneManager.GetActiveScene().name != "MainMenu")
+            gameManager.gameEnd.SetActive(true);
+    }
+
     public void Twitter() {
         Application.OpenURL("https://twitter.com/fsh_zone");
     }
