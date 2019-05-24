@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public enum PlayerDirection
 {
@@ -10,6 +11,13 @@ public enum PlayerDirection
     RIGHT,
 
     COUNT
+}
+public enum DraggedDirection
+{
+    Up,
+    Down,
+    Right,
+    Left
 }
 
 public class PlayerController : MonoBehaviour
@@ -26,6 +34,15 @@ public class PlayerController : MonoBehaviour
     public int health = 1;
     public bool isPlayerDead = false;
     public int Score;
+
+    public Vector2 fingerDownPosition;
+    public Vector2 fingerUpPosition;
+
+    [SerializeField]
+    private bool detectSwipeOnlyAfterRelease = false;
+
+    [SerializeField]
+    private float minDistanceForSwipe = 20f;
 
     private void Start()
     {
@@ -135,16 +152,28 @@ public class PlayerController : MonoBehaviour
         StartCoroutine("Hop");
     }
 
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.CompareTag("Enemy"))
-    //    {
-    //        this.health = 0;
-    //    }
-    //}
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Enemy"))
-    //        health = 0;
-    //}
+    public void OnEndDrag(PointerEventData eventData)
+    {
+        Vector3 dragVectorDirection = (eventData.position - eventData.pressPosition).normalized;
+        Debug.Log("norm + " + dragVectorDirection);
+        GetDragDirection(dragVectorDirection);
+
+    }
+
+    private DraggedDirection GetDragDirection(Vector3 dragVector)
+    {
+        float positiveX = Mathf.Abs(dragVector.x);
+        float positiveY = Mathf.Abs(dragVector.y);
+        DraggedDirection draggedDir;
+        if (positiveX > positiveY)
+        {
+            draggedDir = (dragVector.x > 0) ? DraggedDirection.Right : DraggedDirection.Left;
+        }
+        else
+        {
+            draggedDir = (dragVector.y > 0) ? DraggedDirection.Up : DraggedDirection.Down;
+        }
+        Debug.Log(draggedDir);
+        return draggedDir;
+    }    
 }
