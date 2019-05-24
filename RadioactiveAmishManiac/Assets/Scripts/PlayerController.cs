@@ -34,6 +34,9 @@ public class PlayerController : MonoBehaviour
     public bool isPlayerDead = false;
     public int Score;
 
+    public GameObject splashParticles;
+    public GameObject deathParticles;
+
     bool isOnPlatform = false;
     float originalY = 0.0f;
     Transform originalParent = null;
@@ -61,12 +64,15 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (isPlayerDead)
+            return;
+
         if (Input.GetKeyDown(KeyCode.P))
             health = 0;
 
         if (health == 0 && isPlayerDead == false)
         {
-            Time.timeScale = 0.0f;
+            //Time.timeScale = 0.0f;
             gameManager = GameManager.Instance;
             gameManager.gameUI.SetActive(false);
             gameManager.gameEnd.SetActive(true);
@@ -79,19 +85,24 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(new Ray(this.transform.position, -transform.up), out hit, 1))
         {
             if (hit.transform.CompareTag("Water"))
+            {
                 health = 0;
+                Instantiate(splashParticles, transform.position, splashParticles.transform.rotation);
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.W) && !isMoving)
         {
             Score++;
-            gabesfuckingugly.Instance.SetScore(Score);
+            if (gabesfuckingugly.Instance)
+                gabesfuckingugly.Instance.SetScore(Score);
             MoveInDirection(PlayerDirection.FORWARD);
         }
         if (Input.GetKeyDown(KeyCode.S) && !isMoving)
         {
             Score--;
-            gabesfuckingugly.Instance.SetScore(Score);
+            if (gabesfuckingugly.Instance)
+                gabesfuckingugly.Instance.SetScore(Score);
             MoveInDirection(PlayerDirection.BACKWARD);
         }
         if (Input.GetKeyDown(KeyCode.A) && !isMoving && !isOnPlatform)
@@ -159,7 +170,14 @@ public class PlayerController : MonoBehaviour
         int high = PlayerPrefs.GetInt("highscore", 0);
         high = Mathf.Max(high, Score);
         PlayerPrefs.SetInt("highscore", high);
-        gabesfuckingugly.Instance.SetScore(Score);
+        if (gabesfuckingugly.Instance)
+            gabesfuckingugly.Instance.SetScore(Score);
+
+        Instantiate(deathParticles, transform.position, deathParticles.transform.rotation);
+        GameController.instance.isPlaying = false;
+
+        StopAllCoroutines();
+        this.gameObject.SetActive(false);
     }
 
     void OnDrawGizmos()
@@ -228,5 +246,5 @@ public class PlayerController : MonoBehaviour
         }
         Debug.Log(draggedDir);
         return draggedDir;
-    }    
+    }
 }

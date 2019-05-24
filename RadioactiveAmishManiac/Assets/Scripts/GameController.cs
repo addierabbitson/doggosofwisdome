@@ -6,6 +6,8 @@ using UnityEngine.Assertions;
 public class GameController : MonoBehaviour
 {
 
+    public static GameController instance;
+
     public bool isPlaying = false;
     public Vector3 cameraDirection = Vector3.forward;
     float scrollMultiplier = 1.0f;
@@ -25,6 +27,8 @@ public class GameController : MonoBehaviour
         Assert.IsNotNull(generator, "LevelGenerator object must be in the scene!");
         player = FindObjectOfType<PlayerController>();
         Assert.IsNotNull(player, "PlayerController object must be in the scene!");
+
+        instance = this;
     }
 
     private void FixedUpdate()

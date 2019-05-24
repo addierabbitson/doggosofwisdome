@@ -160,6 +160,10 @@ MonoBehaviour:
   health: 1
   isPlayerDead: 0
   Score: 0
+  splashParticles: {fileID: 3722755565723702167, guid: 849ee116dbd60204ea9db9fed65b3839,
+    type: 3}
+  deathParticles: {fileID: 6973050683537165951, guid: 87ab55f632e5c7b4e8b8f69b7d14702f,
+    type: 3}
   fingerDownPosition: {x: 0, y: 0}
   fingerUpPosition: {x: 0, y: 0}
   detectSwipeOnlyAfterRelease: 0
