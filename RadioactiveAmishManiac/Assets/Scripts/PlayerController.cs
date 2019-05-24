@@ -71,6 +71,7 @@ public class PlayerController : MonoBehaviour
             gameManager.gameUI.SetActive(false);
             gameManager.gameEnd.SetActive(true);
             isPlayerDead = true;
+            OnDeath();
         }
 
         RaycastHit hit;
@@ -83,11 +84,13 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W) && !isMoving)
         {
             Score++;
+            gabesfuckingugly.Instance.SetScore(Score);
             MoveInDirection(PlayerDirection.FORWARD);
         }
         if (Input.GetKeyDown(KeyCode.S) && !isMoving)
         {
             Score--;
+            gabesfuckingugly.Instance.SetScore(Score);
             MoveInDirection(PlayerDirection.BACKWARD);
         }
         if (Input.GetKeyDown(KeyCode.A) && !isMoving && !isOnPlatform)
@@ -148,6 +151,14 @@ public class PlayerController : MonoBehaviour
         temp.y = originalY;
         transform.position = temp;
         isMoving = false;
+    }
+
+    void OnDeath()
+    {
+        int high = PlayerPrefs.GetInt("highscore", 0);
+        high = Mathf.Max(high, Score);
+        PlayerPrefs.SetInt("highscore", high);
+        gabesfuckingugly.Instance.SetScore(Score);
     }
 
     void OnDrawGizmos()
