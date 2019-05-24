@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
     public int health = 1;
     public bool isPlayerDead = false;
     public int Score;
+    public int maxDragDistance;
 
     public GameObject splashParticles;
     public GameObject deathParticles;
@@ -41,8 +42,8 @@ public class PlayerController : MonoBehaviour
     float originalY = 0.0f;
     Transform originalParent = null;
 
-    public Vector2 fingerDownPosition;
-    public Vector2 fingerUpPosition;
+    public Vector2 fd;
+    public Vector2 fu;
 
     [SerializeField]
     private bool detectSwipeOnlyAfterRelease = false;
@@ -79,6 +80,77 @@ public class PlayerController : MonoBehaviour
             isPlayerDead = true;
             gameManager.currentPopup = Popup.GAMEEND;
             OnDeath();
+        }
+
+        int nTouches = Input.touchCount;
+
+        if(nTouches > 0)
+        {
+            print(nTouches + "touch detected");
+
+            for (int i = 0; i < nTouches; i++)
+            {
+                Touch touch = Input.GetTouch(i);
+
+                TouchPhase phase = touch.phase;
+
+                if (touch.phase == TouchPhase.Began)
+                {
+                    fd = touch.position;
+                    fu = touch.position;
+                }
+                else if (touch.phase == TouchPhase.Moved)
+                {
+                    fu = touch.position;
+                }
+                else if (touch.phase == TouchPhase.Ended)
+                {
+                    fu = touch.position;
+
+                    if (Mathf.Abs(fu.x - fd.x) > maxDragDistance || Mathf.Abs(fu.y - fd.y) > maxDragDistance)
+                    {
+                        if (Mathf.Abs(fu.x - fd.x) > Mathf.Abs(fu.y - fd.y))
+                        {
+                            if(fu.x > fd.x)
+                            {
+                                MoveInDirection(PlayerDirection.LEFT);
+                                Debug.Log("Left");
+                            }
+                            else
+                            {
+                                MoveInDirection(PlayerDirection.RIGHT);
+                                Debug.Log("Right");
+                            }
+                        }
+                        else
+                        {
+                            if (fu.y > fd.y)
+                            {
+                                Score++;
+                                if (gabesfuckingugly.Instance)
+                                    gabesfuckingugly.Instance.SetScore(Score);
+                                MoveInDirection(PlayerDirection.FORWARD);
+                                Debug.Log("Forward");
+                            }
+                            else
+                            {
+                                Score--;
+                                if (gabesfuckingugly.Instance)
+                                    gabesfuckingugly.Instance.SetScore(Score);
+                                MoveInDirection(PlayerDirection.BACKWARD);
+                                Debug.Log("Backward");
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    Score++;
+                    if (gabesfuckingugly.Instance)
+                        gabesfuckingugly.Instance.SetScore(Score);
+                    MoveInDirection(PlayerDirection.FORWARD);
+                }
+            }
         }
 
         RaycastHit hit;
