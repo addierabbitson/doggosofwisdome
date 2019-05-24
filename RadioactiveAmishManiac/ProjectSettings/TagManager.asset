@@ -8,6 +8,7 @@ TagManager:
   - Obstacle
   - Enemy
   - Water
+  - Platform
   layers:
   - Default
   - TransparentFX
