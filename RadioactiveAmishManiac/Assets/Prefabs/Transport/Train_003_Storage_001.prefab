@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 7217634170398610440}
   m_Layer: 0
   m_Name: Train_003_Storage_001
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
