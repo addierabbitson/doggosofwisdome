@@ -7,7 +7,7 @@ public class Game : BaseState
 {
     private void Update()
     {
-        
+
     }
 
     public void PauseGame()
@@ -33,8 +33,12 @@ public class Game : BaseState
     public void BackToPause()
     {
         gameManager.settingMenu.SetActive(false);
-        if(SceneManager.GetActiveScene().name != "MainMenu")
+        if (SceneManager.GetActiveScene().name != "MainMenu")
             gameManager.pauseMenu.SetActive(true);
+    }
+
+    public void Twitter() {
+        Application.OpenURL("https://twitter.com/fsh_zone");
     }
 
     public void Replay()
@@ -46,7 +50,6 @@ public class Game : BaseState
 
     public void Menu()
     {
-        //TO FUCKIN DO
         gameManager.currentState = States.MAINMENU;
     }
 }
