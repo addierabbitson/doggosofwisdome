@@ -25,7 +25,8 @@ public class PlayerController : MonoBehaviour
     public GameManager gameManager;
     public int health = 1;
     public bool isPlayerDead = false;
-    
+    public int Score;
+
     private void Start()
     {
         direction = new Dictionary<PlayerDirection, Vector3>();
@@ -50,13 +51,7 @@ public class PlayerController : MonoBehaviour
             isPlayerDead = true;
         }
         RaycastHit hit;
-        if (Physics.Raycast(new Ray(this.transform.position, transform.forward), out hit, 1)) {
-            if (hit.transform.CompareTag("Obstacle"))
-            {
-                directionNotToMove = currentDirection;
-            }
-        }
-        else if (Physics.Raycast(new Ray(this.transform.position, -transform.up), out hit, 1))
+        if (Physics.Raycast(new Ray(this.transform.position, -transform.up), out hit, 1))
         {
             if (hit.transform.CompareTag("Water"))
             {
@@ -68,37 +63,22 @@ public class PlayerController : MonoBehaviour
             directionNotToMove = PlayerDirection.COUNT;
         }
 
-        if(Input.GetKeyDown(KeyCode.W) && !isMoving && directionNotToMove != PlayerDirection.FORWARD)
+        if (Input.GetKeyDown(KeyCode.W) && !isMoving && directionNotToMove != PlayerDirection.FORWARD)
         {
-            UpdateDirection(PlayerDirection.FORWARD);
-            currentPos = transform.localPosition;
-            targetPos = currentPos + direction[PlayerDirection.FORWARD];
-
-            StartCoroutine("Hop");
+            Score++;
+            MoveInDirection(PlayerDirection.FORWARD);
         }
-        if(Input.GetKeyDown(KeyCode.S) && !isMoving && directionNotToMove != PlayerDirection.BACKWARD)
+        if (Input.GetKeyDown(KeyCode.S) && !isMoving && directionNotToMove != PlayerDirection.BACKWARD)
         {
-            UpdateDirection(PlayerDirection.BACKWARD);
-            currentPos = transform.localPosition;
-            targetPos = currentPos + direction[PlayerDirection.BACKWARD];
-
-            StartCoroutine("Hop");
+            MoveInDirection(PlayerDirection.BACKWARD);
         }
         if (Input.GetKeyDown(KeyCode.A) && !isMoving && directionNotToMove != PlayerDirection.LEFT)
         {
-            UpdateDirection(PlayerDirection.LEFT);
-            currentPos = transform.localPosition;
-            targetPos = currentPos + direction[PlayerDirection.LEFT];
-
-            StartCoroutine("Hop");
+            MoveInDirection(PlayerDirection.LEFT);
         }
         if (Input.GetKeyDown(KeyCode.D) && !isMoving && directionNotToMove != PlayerDirection.RIGHT)
         {
-            UpdateDirection(PlayerDirection.RIGHT);
-            currentPos = transform.localPosition;
-            targetPos = currentPos + direction[PlayerDirection.RIGHT];
-            
-            StartCoroutine("Hop");
+            MoveInDirection(PlayerDirection.RIGHT);
         }
     }
 
@@ -130,12 +110,29 @@ public class PlayerController : MonoBehaviour
         newPos.y = y;
         transform.localPosition = newPos;
         isMoving = false;
+
     }
-    
-    void OnDrawGizmos() 
+
+    void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawLine(transform.position, transform.forward * 5.0f);
+    }
+
+    void MoveInDirection(PlayerDirection dir)
+    {
+        RaycastHit hit;
+        if (Physics.Raycast(new Ray(this.transform.position, direction[dir]), out hit, 1))
+        {
+            if (hit.transform.CompareTag("Obstacle"))
+                return;
+        }
+
+        UpdateDirection(dir);
+        currentPos = transform.localPosition;
+        targetPos = currentPos + direction[dir];
+
+        StartCoroutine("Hop");
     }
 
     //private void OnTriggerEnter(Collider other)
