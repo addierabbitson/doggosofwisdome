@@ -50,13 +50,13 @@ public class Game : BaseState
     public void Replay()
     {
         gameManager.gameEnd.SetActive(false);
-        SceneManager.LoadScene("CamScene");
+        SceneChanger.ChangeToScene("CamScene");
         Time.timeScale = 1.0f;
     }
 
     public void MainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneChanger.ChangeToScene("MainMenu");
         gameManager.currentState = States.MAINMENU;
         gameManager.currentPopup = Popup.COUNT;
     }

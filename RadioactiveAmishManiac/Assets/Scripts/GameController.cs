@@ -45,7 +45,7 @@ public class GameController : MonoBehaviour
         float dist = dif.magnitude;
 
         if (dist > 2.0f)
-            scrollMultiplier = dist - 1.0f;
+            scrollMultiplier = Mathf.Pow(dist - 1.0f, 2.0f);
         else
             scrollMultiplier = 1.0f;
     }

@@ -81,12 +81,12 @@ public class GameManager : MonoBehaviour
         {
             case States.MAINMENU:
                 Time.timeScale = 1.0f;
-                SceneManager.LoadScene("MainMenu");
+                SceneChanger.ChangeToScene("MainMenu");
 
                 break;
             case States.GAME:
                 Time.timeScale = 1.0f;
-                SceneManager.LoadScene("CamScene");
+                SceneChanger.ChangeToScene("CamScene");
                 gameUI.SetActive(true);
 
                 break;
