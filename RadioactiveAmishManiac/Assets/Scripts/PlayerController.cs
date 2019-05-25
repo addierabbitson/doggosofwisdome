@@ -59,6 +59,9 @@ public class PlayerController : MonoBehaviour
     float squishHeight = 1.0f;
     float squishVel = 0.0f;
 
+    [Header("Boing")]
+    public AudioSource boingSource;
+
     private void Start()
     {
         if (gabesfuckingugly.Instance)
@@ -346,6 +349,13 @@ public class PlayerController : MonoBehaviour
         targetPos = currentPos + direction[dir];
 
         StartCoroutine("Hop");
+        PlayBoing();
+    }
+
+    void PlayBoing()
+    {
+        boingSource.pitch = Random.Range(0.6f, 0.8f);
+        boingSource.Play();
     }
 
     private void OnTriggerEnter(Collider other)

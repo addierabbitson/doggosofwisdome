@@ -9,6 +9,7 @@ public class SceneChanger : MonoBehaviour
     public static SceneChanger instance = null;
 
     public Transform image;
+    public AudioSource whooshSound;
 
     private void Awake()
     {
@@ -24,13 +25,17 @@ public class SceneChanger : MonoBehaviour
     public static void ChangeToScene(string sceneName)
     {
         if (instance == null)
+        {
+            SceneManager.LoadScene(sceneName);
             return;
+        }
         instance._ChangeScene(sceneName);
     }
 
     public void _ChangeScene(string sceneName)
     {
         StopAllCoroutines();
+        whooshSound.Play();
         StartCoroutine(DoChangeScene(sceneName));
     }
 

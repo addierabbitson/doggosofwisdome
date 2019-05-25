@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
+using UnityEngine.UI;
 using TMPro;
 
 public class gabesfuckingugly : MonoBehaviour
@@ -10,6 +12,9 @@ public class gabesfuckingugly : MonoBehaviour
 
     public List<TextMeshProUGUI> scoreTexts;
     public List<TextMeshProUGUI> bestTexts;
+
+    public AudioMixer mainMixer;
+    public Slider volumeSlider;
 
     [Header("Tap to play wobble")]
     public Transform tapToPlayText;
@@ -31,6 +36,12 @@ public class gabesfuckingugly : MonoBehaviour
 
         DontDestroyOnLoad(this.gameObject);
         UpdateBestTexts();
+    }
+
+    private void Start()
+    {
+        volumeSlider.value = PlayerPrefs.GetFloat("MasterVolume", 0.8f);
+        SetVolume(volumeSlider.value);
     }
 
     private void Update()
@@ -59,5 +70,14 @@ public class gabesfuckingugly : MonoBehaviour
             t.text = "BEST: " + best.ToString();
     }
 
+    public void SetVolume(float vol)
+    {
+        PlayerPrefs.SetFloat("MasterVolume", vol);
+        mainMixer.SetFloat("MasterVolume", ConvertToDecibel(vol));
+    }
 
+    float ConvertToDecibel(float value)
+    {
+        return Mathf.Log10(Mathf.Max(value, 0.0001f)) * 20f;
+    }
 }
