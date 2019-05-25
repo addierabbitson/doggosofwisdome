@@ -61,6 +61,9 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        if (gabesfuckingugly.Instance)
+            gabesfuckingugly.Instance.SetScore(Score);
+
         direction = new Dictionary<PlayerDirection, Vector3>();
         direction.Add(PlayerDirection.FORWARD, new Vector3(0, 0, 1));
         direction.Add(PlayerDirection.BACKWARD, new Vector3(0, 0, -1));
@@ -304,7 +307,7 @@ public class PlayerController : MonoBehaviour
         StopAllCoroutines();
         this.gameObject.SetActive(false);
 
-        CameraScript.instance.ShakeCamera(0.3f, 10.0f);
+        CameraScript.instance.ShakeCamera(0.3f, 4.0f);
     }
 
     void OnDrawGizmos()
